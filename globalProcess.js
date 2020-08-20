@@ -15,3 +15,6 @@ const greeting = grab("--greeting");
 const user = grab("--user");
 
 console.log(`${greeting} ${user}`)
+
+// to run this IN TERMINAL type: node globalProcess --user Israel --greeting "Hi"
+//                                                  does not have to be in this order can be switched
