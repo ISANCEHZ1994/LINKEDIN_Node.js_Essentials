@@ -29,12 +29,14 @@ const answers = []; // Now that we are answering questions, we want to put them 
 
 // Standard Input or stdin
 process.stdin.on('data', data => { // to listen for answers
-    process.stdout.write(`\n\n\n\ ${data.toString().trim()} \n\n`); // trim() cuts out any leading or trimming spaces or commands
+    // process.stdout.write(`\n\n\n\ ${data.toString().trim()} \n\n`); // trim() cuts out any leading or trimming spaces or commands
     // so right now the program returns whatever we type (echos back) in the terminal WITHOUT stopping the program (because we haven't told it too yet)
-    process.exit(); // BOOM - now it'll exit
+    // process.exit(); // BOOM - now it'll exit
 
-    answers.push(data.toString().trim()) // we are replacing the above fucntion so that our anwswers can show
+    answers.push(data.toString().trim()); // we are replacing the above fucntion so that the questions and answers run smoothly
     if( answers.length < questions.length){
-        ask(answers.length)
+        ask(answers.length); // we are making it so that it asks the next question in the questions array
+    } else{ // If there are no more questions to ask - exit program
+        process.exit(); // BOOM - now it'll exit
     }
 })
