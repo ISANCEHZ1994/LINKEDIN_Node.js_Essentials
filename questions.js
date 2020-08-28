@@ -24,3 +24,9 @@ const ask = (i=0) => {
 } 
 
 ask(); // invoke our ask() function
+
+// Standard Input or stdin
+process.stdin.on('data', data => { // to listen for answers
+    process.stdout.write(`\n\n\n\ ${data.toString().trim()} \n\n`); // trim() cuts out any leading or trimming spaces or commands
+    // so right now the program returns whatever we type in the terminal WITHOUT stopping the program (because we haven't told it too yet)
+})
