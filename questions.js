@@ -40,3 +40,12 @@ process.stdin.on('data', data => { // to listen for answers
         process.exit(); // BOOM - now it'll exit
     }
 })
+
+process.on('exit', () => { // Here is another listener 
+    
+    const [ age, location, ss, anyReply ] = answers; // this is known as array destructuring
+    console.log(`
+    That's all the questions. Thanks for the answers! 
+    You are: ${age}, live in: ${location}, your response to SS#: ${ss}, whatever you said to the random question: ${anyReply}
+    `)
+})
