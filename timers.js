@@ -43,7 +43,8 @@ const timerFinished = () => {
   console.log("done");
 };
 
-const interval = setInterval(incTime, waitInterval);
+const interval = setInterval(incTime, waitInterval); // incTime gets called every half-second 
+// every half second it'll add to the current time then calcute the percentage
 setTimeout(timerFinished, waitTime);
 
 // Note to self: for some reason my code was not working like his and I can find out why - downloaded and copied the work 
