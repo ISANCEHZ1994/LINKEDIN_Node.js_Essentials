@@ -5,6 +5,10 @@ const path = require('path'); // we are using path module here!
 const util = require('util');
 const v8 = require('v8');
 
+// NOTE THAT ALL OF THE FUNCTIONS CAN BE DESTRUCTURED OUT OF THEIR MODULES
+// Example: 
+// Line 5 can change to => const { log } = require('util') 
+// it would be the same for path, v8 and others
 
 const dirNameFiles = path.join(__dirname, 'www', 'files','uploads');
                 // this will give us the full path to the current directory 
