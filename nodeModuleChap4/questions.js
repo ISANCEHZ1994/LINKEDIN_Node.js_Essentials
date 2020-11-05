@@ -1,11 +1,6 @@
-// also view ask.js
+// also view ask.js - the clean version is on collectAnswers.js file
 
-const readline = require('readline');
-
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
+const collectAnswers = require('./lib/collectAnswers');
 
 const questions = [ // we want a varibale that can hold our questions
     'whats your name?',
@@ -13,26 +8,28 @@ const questions = [ // we want a varibale that can hold our questions
     'who do you like?'
 ]; 
 
-const collectAnswers = (questions, done) => {
-    const answers = [];
-    const [ firstQuestion ] = questions // destructing 
-
-    const questionAnswered = answer => {
-        answers.push(answer);
-        if(answers.length < questions.length){
-            rl.question(questions[answers.length], questionAnswered)
-        }else{
-            done(answers)
-        }
-    }
-
-    rl.question(firstQuestion, questionAnswered) // this asks the first question every other is on line 21
-}
-
 collectAnswers(questions, (answers) => { // sends an array of questions and a callback to handle all the answers
     console.log('thank you for your answers!');
     console.log(answers)
     process.exit(); // stops program
 })
 
+// <----------- When we run node questions.js this program still works
 
+// const collectAnswers = (questions, done) => { // NOTE: This WAS the original BEFORE we changed it to an export
+//     const answers = [];
+//     const [ firstQuestion ] = questions // destructing 
+
+//     const questionAnswered = answer => {
+//         answers.push(answer);
+//         if(answers.length < questions.length){
+//             rl.question(questions[answers.length], questionAnswered)
+//         }else{
+//             done(answers)
+//         }
+//     }
+
+//     rl.question(firstQuestion, questionAnswered) 
+// }
+
+// we created a lib FOLDER and now we want this collectAnswers function in that file
