@@ -20,11 +20,10 @@ module.exports = (questions, done = f => f) => {
         if(answers.length < questions.length){
             rl.question(questions[answers.length], questionAnswered)
         }else{
-            emitter.emit("complete", answers) // emitting a complete event
-            done(answers)
+            emitter.emit("complete", answers); // emitting a complete event
+            done(answers);
         }
     };
-
 
     rl.question(firstQuestion, questionAnswered) // this asks the first question every other is on line 21
 
