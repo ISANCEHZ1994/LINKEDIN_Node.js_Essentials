@@ -1,11 +1,12 @@
 // we created a lib FOLDER and now we want this collectAnswers in that file
 const readline = require('readline');
+
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
-})
+});
 
-module.exports = (questions, doneU) => { 
+module.exports = (questions, done = f => f) => { 
     const answers = [];
     const [ firstQuestion ] = questions // destructing 
 
@@ -19,4 +20,4 @@ module.exports = (questions, doneU) => {
     }
 
     rl.question(firstQuestion, questionAnswered) // this asks the first question every other is on line 21
-}
+};

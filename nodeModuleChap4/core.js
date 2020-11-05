@@ -1,6 +1,9 @@
 // Reminder: The require function is available globally and is used to load modules
 // There are many modules that are really helpfully
 
+// The major difference between require and import , is that require 
+// will automatically scan node_modules to find modules, but import , which comes from ES6, won't.
+
 const path = require('path'); // we are using path module here!
 const util = require('util');
 const v8 = require('v8');
@@ -24,7 +27,8 @@ const dirNameFiles = path.join(__dirname, 'www', 'files','uploads');
 // 2 Sep 15:52:21 - core.js
 // 2 Sep 15:52:21 - ^ The Name of the current file
 
-util.log(v8.getHeapStatistics()); //getHeapCodeStatistics/ - is a function is available using the v8 module
+util.log(v8.getHeapStatistics()); 
+//getHeapCodeStatistics/ - is a function is available using the v8 module
 // getHeapCodeStatistics helps us look at the memory usage and statistics
 // the console should have something like this( NOTE THIS IS FOR getHeapCodeStatistics() ):
 

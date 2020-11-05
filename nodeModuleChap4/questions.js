@@ -16,7 +16,9 @@ collectAnswers(questions, (answers) => { // sends an array of questions and a ca
 
 // <----------- When we run node questions.js this program still works
 
-// const collectAnswers = (questions, done) => { // NOTE: This WAS the original BEFORE we changed it to an export
+// NOTE: This WAS the original BEFORE we changed and moved it to module.export in collectAnswers file
+
+// const collectAnswers = (questions, done) => { 
 //     const answers = [];
 //     const [ firstQuestion ] = questions // destructing 
 
@@ -28,7 +30,6 @@ collectAnswers(questions, (answers) => { // sends an array of questions and a ca
 //             done(answers)
 //         }
 //     }
-
 //     rl.question(firstQuestion, questionAnswered) 
 // }
 
