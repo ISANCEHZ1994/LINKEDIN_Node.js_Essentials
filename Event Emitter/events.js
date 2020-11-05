@@ -14,6 +14,8 @@ emitter.on("customEvent", (message, user) => {
     console.log(`${user}: ${message}`);
 })
 
+// NOTE: Code below still works!!
+
 // The idea behind this is we are making the computer say "Hello World"
 // emitter.emit("customEvent", "Hello World", "Computer"); // (first) we can call our events (the string) whatever we like but it should make sense to user
 // // the next set of arguments represents data that we want to pass to the handler

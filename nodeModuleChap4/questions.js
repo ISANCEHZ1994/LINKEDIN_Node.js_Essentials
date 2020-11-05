@@ -8,11 +8,14 @@ const questions = [ // we want a varibale that can hold our questions
     'who do you like?'
 ]; 
 
-collectAnswers(questions, (answers) => { // sends an array of questions and a callback to handle all the answers
+const answerEvents = collectAnswers(questions, (answers) => { // sends an array of questions and a callback to handle all the answers
     console.log('thank you for your answers!');
     console.log(answers)
     process.exit(); // stops program
 })
+
+answerEvents.on("answer", answer => 
+console.log(`question answered: ${answer}`))
 
 // <----------- When we run node questions.js this program still works
 
